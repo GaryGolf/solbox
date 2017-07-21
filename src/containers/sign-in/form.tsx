@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux'
 const {connect} = require('react-redux')
 import * as Actions from '../../actions/index'
 import {UserState} from '../../reducers/user'
-import {BoxShadow} from 'react-native-shadow'
 
 import Truck from './truck'
 
@@ -25,41 +24,29 @@ interface Props {
 )
 export default class Form extends React.Component <Props, null>{
   render() {
-    const shadowOpt = {
-        width: 300, // !!
-        height: 270, // !!
-        color:"#000",
-        border: 3,
-        radius: 0,
-        opacity: .4,
-        x: 1,
-        y: 1,
-        style:{marginVertical:5}
-    }
+   
     return (
-        <BoxShadow setting={shadowOpt}> 
-            <View style={styles.container}>
-                <Text style={styles.header}>S I G N   I N</Text>
-                <TextInput
-                    style={styles.input}
-                    keyboardType={'email-address'}
-                    placeholder={'Username (e-mail)'}
-                    maxLength={60}
-                />
-                <TextInput
-                    style={styles.input}
-                    keyboardType={'default'}
-                    placeholder={'password'}
-                    maxLength={60}
-                />
-                <TouchableHighlight style={styles.button}>
-                <View style={styles.label}> 
-                    <Truck/> 
-                    <Text style={styles.text}>  SIGN IN</Text>
-                </View>   
-                </TouchableHighlight>
-            </View>
-        </BoxShadow>
+        <View style={styles.container}>
+            <Text style={styles.header}>S I G N   I N</Text>
+            <TextInput
+                style={styles.input}
+                keyboardType={'email-address'}
+                placeholder={'Username (e-mail)'}
+                maxLength={60}
+            />
+            <TextInput
+                style={styles.input}
+                keyboardType={'default'}
+                placeholder={'password'}
+                maxLength={60}
+            />
+            <TouchableHighlight style={styles.button}>
+            <View style={styles.label}> 
+                <Truck/> 
+                <Text style={styles.text}>  SIGN IN</Text>
+            </View>   
+            </TouchableHighlight>
+        </View>
     );
   }
 }

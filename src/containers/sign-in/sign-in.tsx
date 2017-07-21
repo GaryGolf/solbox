@@ -29,14 +29,8 @@ export default class SignIn extends React.Component <Props, null>{
   
     return (
     <View style={styles.container}>
-        <View style={styles.logo}>
-            <Logo/>
-        </View>
-        <View style={styles.form}>
-          
-                <Form />
-        </View> 
-            
+        <View style={styles.logo}><Logo/></View>
+        <View style={styles.form}><Form /></View> 
     </View>
     );
   }
@@ -57,8 +51,14 @@ const styles = StyleSheet.create({
         margin: '13%',
     },
     form: {
-        height: '50%',
-        width: '85%',
+        height: 320,
+        width: 300,
+        borderTopWidth: 2,
+        borderLeftWidth: 2,
+        borderRightWidth: 3,
+        borderBottomWidth: 3,
+        borderColor: '#401295',
+        elevation: 1,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.8,
