@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { Provider, Store } from 'react-redux'
 import configureStore from '../store'
+
 import SignIn from './sign-in/index'
+import FormOne from './form-one/form-one'
+import Comment from './comment'
 
 const store = configureStore()
 
@@ -10,7 +13,9 @@ export default class Main extends React.Component <null, null>{
   render() {
     return (
       <Provider store={store}>
-        <SignIn/>
+        {/* <SignIn/> */}
+        {/* <FormOne/> */}
+        <Comment/>
       </Provider>
     );
   }
