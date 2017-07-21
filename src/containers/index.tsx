@@ -15,11 +15,11 @@ export default class Main extends React.Component <null, null>{
   render() {
     return (
       <Provider store={store}>
-        {/* <SignIn/> */}
-        {/* <FormOne/> */}
-        {/* <Comment/> */}
+         {/* <SignIn/>  */}
+         {/* <FormOne/>  */}
+         {/* <Comment/>  */}
         {/* <TakeShot/> */}
-        <TakeSignature/>
+         <TakeSignature/> 
       </Provider>
     );
   }
