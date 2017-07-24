@@ -16,7 +16,7 @@ export default class HelloWrold extends React.Component <Props, State> {
         const { goBack } = this.props.navigation;
         return (
         <View>
-            <Text>Hello, Chat App!</Text>
+            <Text>Hello, World App!</Text>
             <Button
                 onPress={() => goBack()}
                 title="back"

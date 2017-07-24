@@ -15,16 +15,13 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
     },
-    header: {
-        backgroundColor: '#512da7',
-    },
-    title: {
-        color: '#fff'
-    },
     menu: {
         margin: 10,
-        backgroundColor: 'lightblue',
         padding: 4
+    },
+    hamburger: {
+        fontSize: 30,
+        color: '#fff'
     }
 })
 
@@ -37,12 +34,21 @@ const menuButton = props => (
     </TouchableHighlight>
 )
 export default class Main extends React.Component<Props, State> {
-    static navigationOptions:NavigationStackScreenOptions = {
+    static navigationOptions = ({navigation}) => ({
         title: 'SolBox',
-        headerLeft: menuButton(null),
-        headerStyle: styles.header,
-        headerTitleStyle: styles.title
-    } 
+        headerLeft: (
+            <TouchableHighlight onPress={()=>navigation.navigate('DrawerOpen')}> 
+                <View style={styles.menu}>
+                    <Text style={styles.hamburger}>=</Text>
+                </View>
+            </TouchableHighlight>
+        ),
+        headerStyle: {backgroundColor: '#512da7'} ,
+        headerTitleStyle: { color: '#fff'}
+    }) 
+    openDrawer(){
+        this.props.navigation.navigate('DrawerOpen')
+    }
     render(){
         const {navigate} = this.props.navigation
         return (
