@@ -9,7 +9,7 @@ interface State {}
 
 export default class HelloWrold extends React.Component <Props, State> {
     static navigationOptions:NavigationStackScreenOptions = {
-        title: 'SolBox',
+        title: 'HelloWorld',
         headerLeft: <Text>Info</Text>,
     };
      render() {
