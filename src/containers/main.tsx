@@ -49,8 +49,8 @@ export default class Main extends React.Component<Props, State> {
             <View style={styles.container}>
                 <Text>Main Screen</Text>
                 <Button 
-                    onPress={() => navigate('Chat')}
-                    title="Chat with Lucy"
+                    onPress={() => navigate('HelloWorld')}
+                    title="Hello"
                 />
             </View>
         )

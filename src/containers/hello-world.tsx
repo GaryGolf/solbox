@@ -13,13 +13,13 @@ export default class HelloWrold extends React.Component <Props, State> {
         headerLeft: <Text>Info</Text>,
     };
      render() {
-        const { navigate } = this.props.navigation;
+        const { goBack } = this.props.navigation;
         return (
         <View>
             <Text>Hello, Chat App!</Text>
             <Button
-            onPress={() => navigate('Chat')}
-            title="Chat with Lucy"
+                onPress={() => goBack()}
+                title="back"
             />
             <Image source={require('../../img/one.png')}/>
         </View>
