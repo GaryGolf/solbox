@@ -2,7 +2,6 @@ import * as React from 'react'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
 
 import Main from './containers/main'
-// import Menu from './containers/menu'
 import HelloWorld from './containers/hello-world'
 
 const Stack = {
