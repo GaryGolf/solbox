@@ -40,6 +40,7 @@ export default class Main extends React.Component<Props, State> {
                 <JobBody
                     name="ALVARO TRANSPORT PTY LTD"
                     address="90 YARRAWA STREET PRESTONS 2170"
+                    link="Depot Accepted"
                 />
                 <Text>Main Screen</Text>
                 <Button 
