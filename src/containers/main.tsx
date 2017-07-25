@@ -7,32 +7,7 @@ interface Props {
 }
 interface State {}
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        height: '100%',
-        width: '100%',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-    },
-    menu: {
-        margin: 10,
-        padding: 4
-    },
-    hamburger: {
-        fontSize: 30,
-        color: '#fff'
-    }
-})
 
-const menuButton = props => (
-    <TouchableHighlight> 
-        {/* // style={styles.menu_button}> */}
-        <View style={styles.menu}>
-            <Text>=</Text>
-        </View>
-    </TouchableHighlight>
-)
 export default class Main extends React.Component<Props, State> {
     static navigationOptions = ({navigation}) => ({
         title: 'SolBox',
@@ -67,3 +42,21 @@ export default class Main extends React.Component<Props, State> {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        height: '100%',
+        width: '100%',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
+    menu: {
+        margin: 10,
+        padding: 4
+    },
+    hamburger: {
+        fontSize: 30,
+        color: '#fff'
+    }
+})

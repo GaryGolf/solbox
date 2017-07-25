@@ -28,18 +28,19 @@ export default class App extends React.Component <Props, State> {
     
     constructor(props:Props){
         super(props)
-        this.state = {
+        this.state = { // load from localStorage
             username:'',
             password:''
         }
     }
+
     onSignIn({username,password}){
         this.setState({username,password})
     }
 
     render(){
         const {username, password} = this.state
-        if(!username || !password) return <SignIn onSubmit={this.onSignIn.bind(this)}/>
+        // if(!username || !password) return <SignIn onSubmit={this.onSignIn.bind(this)}/>
         return <Router/>
     }
 }
