@@ -43,10 +43,10 @@ export default class SignIn extends React.Component <Props, null> {
                     />
                     <TouchableHighlight style={styles.button}
                         onPress={this.onSubmit.bind(this)}>
-                    <View style={styles.label}> 
-                        <Truck/> 
-                        <Text style={styles.text}>  SIGN IN</Text>
-                    </View>   
+                        <View style={styles.label}> 
+                            <Truck/> 
+                            <Text style={styles.text}>  SIGN IN</Text>
+                        </View>   
                     </TouchableHighlight>
                 </View> 
             </View>
@@ -57,9 +57,7 @@ export default class SignIn extends React.Component <Props, null> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // position: 'absolute',
         height: '100%',
-        // minHeight: 100,
         width: '100%',
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -81,10 +79,9 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.8,
         shadowRadius: 2,
-        flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#fff',
     },
     header: {
         fontSize: 20,
