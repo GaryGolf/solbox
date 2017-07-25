@@ -58,6 +58,11 @@ export default class Main extends React.Component<Props, State> {
                     onPress={() => navigate('HelloWorld')}
                     title="Hello"
                 />
+                <Text>SignIn Screen</Text>
+                <Button 
+                    onPress={() => navigate('SignIn')}
+                    title="SignIn"
+                />
             </View>
         )
     }

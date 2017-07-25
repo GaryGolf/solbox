@@ -1,27 +1,11 @@
 import * as React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableHighlight} from 'react-native';
-import { bindActionCreators } from 'redux'
-const {connect} = require('react-redux')
-import * as Actions from '../../actions/index'
-import {UserState} from '../../reducers/user'
 
 import Truck from './truck'
 
 interface Props {
-    user?: UserState
-    actions?: Actions.Interface
 }
 
-@connect(
-    store => ({
-        user: store.user as UserState
-    }),
-    dispatch => ({
-        actions: {
-            user: bindActionCreators(Actions.User as any, dispatch)  
-        } 
-    })
-)
 export default class Form extends React.Component <Props, null>{
   render() {
    
