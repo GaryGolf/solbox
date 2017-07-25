@@ -3,11 +3,13 @@ import {View, Text } from 'react-native'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
 
 import Main from './containers/main'
+import Comment from './containers/comment'
 import HelloWorld from './containers/hello-world'
 import SignIn from './containers/sign-in'
 
 const Stack = {
     Main: { screen: Main},
+    Comment: {screen: Comment},
     HelloWorld: {screen: HelloWorld}
 }
 

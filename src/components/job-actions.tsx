@@ -6,11 +6,14 @@ import Comment from './svg/comment'
 import Notify from './svg/notify'
 import Photo from './svg/photo'
 
-interface Props {}
+interface Props {
+    navigate(path:string):void
+}
 interface State {}
 
 export default class JobActions extends React.Component <Props, State> {
     render() {
+        const {navigate} = this.props
         return (
             <View style={styles.container}>
                 <View style={styles.row}>
@@ -21,7 +24,7 @@ export default class JobActions extends React.Component <Props, State> {
                         </View>
                     </TouchableHighlight>
                     <TouchableHighlight
-                        onPress={()=>console.log('press')}>
+                        onPress={()=>navigate('Comment')}>
                         <View style={styles.button}>
                             <Comment/>
                         </View>
@@ -58,9 +61,10 @@ const styles = StyleSheet.create({
         flexWrap: 'nowrap',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: 40
+        paddingHorizontal: 35
     },
     button: {
+        marginHorizontal: 15,
         marginVertical: 15
     },
     spacer: {

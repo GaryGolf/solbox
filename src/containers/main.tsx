@@ -44,7 +44,7 @@ export default class Main extends React.Component<Props, State> {
                         address="90 YARRAWA STREET PRESTONS 2170"
                         link="Depot Accepted"
                     />
-                    <JobActions/>
+                    <JobActions navigate={navigate}/>
                 </View>
                 <View style={styles.container}>
                     <JobHeader
@@ -56,7 +56,7 @@ export default class Main extends React.Component<Props, State> {
                         address="90 YARRAWA STREET PRESTONS 2170"
                         link="Depot Start"
                     />
-                    <JobActions/>
+                    <JobActions navigate={navigate}/>
                 </View>
                  <View style={styles.container}>
                     <JobHeader
@@ -68,7 +68,7 @@ export default class Main extends React.Component<Props, State> {
                         address="90 YARRAWA STREET PRESTONS 2170"
                         link="Depot Start"
                     />
-                    <JobActions/>
+                    <JobActions navigate={navigate}/>
                 </View>
                  <View style={styles.container}>
                     <JobHeader
@@ -80,7 +80,7 @@ export default class Main extends React.Component<Props, State> {
                         address="90 YARRAWA STREET PRESTONS 2170"
                         link="Depot Finished"
                     />
-                    <JobActions/>
+                    <JobActions navigate={navigate}/>
                 </View>
                 {/* <Text>Main Screen</Text>
                 <Button 
