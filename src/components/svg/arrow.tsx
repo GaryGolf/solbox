@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Svg, {Path} from 'react-native-svg'
 
-export default class extends React.Component<null, null>{
+export default class Arrow extends React.Component<null, null>{
     render(){
         return (
              <Svg width="20" height="20" viewBox="0 0 20 20">

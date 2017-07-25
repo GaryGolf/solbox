@@ -4,6 +4,7 @@ import { NavigationParams, NavigationStackScreenOptions } from 'react-navigation
 
 import JobHeader from '../components/job-header'
 import JobBody from '../components/job-body'
+import JobActions from '../components/job-actions'
 import Menu from '../components/svg/menu'
 
 interface Props {
@@ -42,6 +43,7 @@ export default class Main extends React.Component<Props, State> {
                     address="90 YARRAWA STREET PRESTONS 2170"
                     link="Depot Accepted"
                 />
+                <JobActions/>
                 <Text>Main Screen</Text>
                 <Button 
                     onPress={() => navigate('HelloWorld')}
