@@ -1,7 +1,8 @@
 import * as React from 'react'
 import {StyleSheet, View, Text} from 'react-native'
 
-import Calendar from './calendar'
+import Calendar from './svg/calendar'
+import Clock from './svg/clock'
 
 declare type JobStatus = 'Initial' | 'Accepted' | 'Depot Start' | 'Depot Finished'
 interface Props {
@@ -19,8 +20,8 @@ const getTime = (date:Date):string => {
 }
 
 const getColor = (status:JobStatus):string => {
-    if(status == 'Initial') return '#000'
-    return '#fff'
+    if(status == 'Initial') return '#555'
+    return '#ddd'
 }
 
 const getBackgroundColor = (status:JobStatus):string => {
@@ -57,7 +58,8 @@ export default class JobHeader extends React.Component<Props, State> {
                      <View style={styles.status_row}>
                         <Text style={[styles.status,{color}]}>{status}</Text>
                     </View>
-                     <View>
+                     <View style={styles.clock}>
+                        <Clock color={color}/>
                         <Text style={[styles.time,{color}]}>{time}</Text>
                     </View>
                 </View>
@@ -78,9 +80,7 @@ export default class JobHeader extends React.Component<Props, State> {
 
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
         width: '100%',
-        // maxHeight: '30%',
         flexDirection: 'row',
         flexWrap: 'nowrap',
         justifyContent: 'space-between',
@@ -95,7 +95,14 @@ const styles = StyleSheet.create({
         fontSize: 22
     },
     time: {
-        fontSize: 18
+        fontSize: 18,
+        marginLeft: 5
+    },
+    clock: {
+        flexDirection: 'row',
+        flexWrap: 'nowrap',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
     },
     calendar: {
         width: 80,

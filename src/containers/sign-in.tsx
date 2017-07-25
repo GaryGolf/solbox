@@ -2,8 +2,8 @@ import * as React from 'react';
 import {StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
 
 
-import Truck from '../components/truck'
-import Logo from '../components/logo'
+import Truck from '../components/svg/truck'
+import Logo from '../components/svg/logo'
 
 interface Credentials {
     username:string
