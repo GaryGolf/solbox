@@ -2,6 +2,8 @@ import * as React from 'react'
 import { StyleSheet, View, Text, Button, TouchableHighlight} from 'react-native'
 import { NavigationParams, NavigationStackScreenOptions } from 'react-navigation'
 
+import JobHeader from '../components/job-header'
+
 interface Props {
     navigation?: NavigationParams
 }
@@ -28,6 +30,10 @@ export default class Main extends React.Component<Props, State> {
         const {navigate} = this.props.navigation
         return (
             <View style={styles.container}>
+                <JobHeader
+                    status="Depot Finished"
+                    date={new Date()}
+                />
                 <Text>Main Screen</Text>
                 <Button 
                     onPress={() => navigate('HelloWorld')}
