@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     },
     time: {
         fontSize: 18,
-        marginLeft: 5
+        marginLeft: 10
     },
     clock: {
         flexDirection: 'row',

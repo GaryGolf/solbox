@@ -3,6 +3,8 @@ import { StyleSheet, View, Text, Button, TouchableHighlight} from 'react-native'
 import { NavigationParams, NavigationStackScreenOptions } from 'react-navigation'
 
 import JobHeader from '../components/job-header'
+import JobBody from '../components/job-body'
+import Menu from '../components/svg/menu'
 
 interface Props {
     navigation?: NavigationParams
@@ -15,9 +17,9 @@ export default class Main extends React.Component<Props, State> {
         title: 'SolBox',
         headerLeft: (
             <TouchableHighlight onPress={()=>navigation.navigate('DrawerOpen')}> 
-                <View style={styles.menu}>
-                    <Text style={styles.hamburger}>=</Text>
-                </View>
+                 <View style={styles.menu}>
+                    <Menu/>
+                </View> 
             </TouchableHighlight>
         ),
         headerStyle: {backgroundColor: '#512da7'} ,
@@ -34,6 +36,10 @@ export default class Main extends React.Component<Props, State> {
                     status="Depot Finished"
                     //status="Initial"
                     date={new Date(2017,8,29,11,44)}
+                />
+                <JobBody
+                    name="ALVARO TRANSPORT PTY LTD"
+                    address="90 YARRAWA STREET PRESTONS 2170"
                 />
                 <Text>Main Screen</Text>
                 <Button 
@@ -61,9 +67,5 @@ const styles = StyleSheet.create({
     menu: {
         margin: 10,
         padding: 4
-    },
-    hamburger: {
-        fontSize: 30,
-        color: '#fff'
     }
 })
