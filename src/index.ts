@@ -7,8 +7,7 @@ import SignIn from './containers/sign-in/sign-in'
 
 const Stack = {
     Main: { screen: Main},
-    HelloWorld: {screen: HelloWorld},
-    SignIn: {screen: SignIn}
+    HelloWorld: {screen: HelloWorld}
 }
 
 const Drawer = {
@@ -16,7 +15,7 @@ const Drawer = {
     HelloStack: {name: 'HelloStack', screen: StackNavigator(Stack, {initialRouteName: 'HelloWorld'})}
 }
 
-export default StackNavigator({
-    Drawer: { name: 'Drawer', screen: DrawerNavigator(Drawer) },
-    ...Stack
-},{headerMode: 'none'})
+const Router = StackNavigator({Drawer:{name:'Drawer',screen:DrawerNavigator(Drawer)},...Stack},{headerMode: 'none'})
+
+
+export default Math.random()>.6? SignIn : Router
