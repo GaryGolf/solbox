@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {StyleSheet, View} from 'react-native'
+import {StyleSheet, View, TouchableHighlight} from 'react-native'
 
 import Close from './svg/close'
 import Comment from './svg/comment'
@@ -14,10 +14,30 @@ export default class JobActions extends React.Component <Props, State> {
         return (
             <View style={styles.container}>
                 <View style={styles.row}>
-                    <Close/>
-                    <Comment/>
-                    <Notify/>
-                    <Photo/>
+                    <TouchableHighlight
+                        onPress={()=>console.log('press')}>
+                        <View style={styles.button}>
+                            <Close/>
+                        </View>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        onPress={()=>console.log('press')}>
+                        <View style={styles.button}>
+                            <Comment/>
+                        </View>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        onPress={()=>console.log('press')}>
+                        <View style={styles.button}>
+                            <Notify/>
+                        </View>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        onPress={()=>console.log('press')}>
+                        <View style={styles.button}>
+                            <Photo/>
+                        </View>
+                    </TouchableHighlight>
                 </View>
                 <View style={styles.spacer}/>
             </View>
@@ -38,8 +58,10 @@ const styles = StyleSheet.create({
         flexWrap: 'nowrap',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: 40,
-        paddingVertical: 15
+        paddingHorizontal: 40
+    },
+    button: {
+        marginVertical: 15
     },
     spacer: {
         height: 16,

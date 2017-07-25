@@ -12,10 +12,11 @@ interface Props {
 interface State {}
 
 const getTime = (date:Date):string => {
-    const bigHours = date.getHours()
-    const minutes = date.getMinutes()
-    const hours = bigHours>12? bigHours-12:bigHours
-    const am = bigHours>12? 'pm':'am'
+    const hur = date.getHours()
+    const min = date.getMinutes()
+    const minutes = min<10?`0${min}`:`${min}`
+    const hours = hur>12?hur-12:hur
+    const am = hur>12? 'pm':'am'
     return `${hours}:${minutes} ${am}`
 }
 
