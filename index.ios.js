@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry} from 'react-native';
-import MainScreen from './build'
+import App from './build'
 
 
-AppRegistry.registerComponent('solbox', () => MainScreen);
+AppRegistry.registerComponent('solbox', () => App);
