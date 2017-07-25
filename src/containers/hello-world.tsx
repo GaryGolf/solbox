@@ -18,7 +18,7 @@ export default class HelloWrold extends React.Component <Props, State> {
         <View>
             <Text>Hello, World App!</Text>
             <Button
-                onPress={() => goBack()}
+                onPress={() => goBack(null)}
                 title="back"
             />
             <Image source={require('../../img/one.png')}/>
