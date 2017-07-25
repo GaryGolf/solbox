@@ -34,8 +34,8 @@ export default class Main extends React.Component<Props, State> {
         return (
             <View style={styles.container}>
                 <JobHeader
-                    status="Depot Finished"
-                    //status="Initial"
+                    //status="Depot Finished"
+                    status="Initial"
                     date={new Date(2017,8,29,11,44)}
                 />
                 <JobBody
