@@ -32,7 +32,7 @@ export default class Main extends React.Component<Props, State> {
             <View style={styles.container}>
                 <JobHeader
                     status="Depot Finished"
-                    date={new Date()}
+                    date={new Date(2017,8,29,11,44)}
                 />
                 <Text>Main Screen</Text>
                 <Button 

@@ -1,6 +1,8 @@
 import * as React from 'react'
 import {StyleSheet, View, Text} from 'react-native'
 
+import Calendar from './calendar'
+
 declare type JobStatus = 'Initial' | 'Accepted' | 'Depot Start' | 'Depot Finished'
 interface Props {
     status: JobStatus
@@ -59,14 +61,15 @@ export default class JobHeader extends React.Component<Props, State> {
                         <Text style={[styles.time,{color}]}>{time}</Text>
                     </View>
                 </View>
-                <View style={styles.box}>
-                    <View style={styles.month_container}>
+                <View style={styles.calendar}>
+                    <Calendar/>
+                     <View style={styles.month_container}>
                         <Text style={styles.month}>{month}</Text>
                     </View>
                     <View style={styles.date_container}>
                         <Text style={styles.day}>{date.getDate()}</Text>
                         <Text style={styles.year}>{date.getFullYear()}</Text>
-                    </View>
+                    </View> 
                 </View>
             </View>
         )
@@ -94,24 +97,28 @@ const styles = StyleSheet.create({
     time: {
         fontSize: 18
     },
-    box: {
+    calendar: {
         width: 80,
-        height: 90,
-    //     backgroundColor: '#fff'
+        height: 87,
     },
     month_container: {
-        backgroundColor: '#fff',
+        position: 'absolute',
+        width: '100%',
+        backgroundColor: 'transparent',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 2
+        marginTop: 5
     },
     month: {
         color: '#512da7'
     },
     date_container: {
-        backgroundColor: '#fff',
+        position: 'absolute',
+        width: '100%',
+        backgroundColor: 'transparent',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 27
     },
     day: {
         fontSize: 22,
