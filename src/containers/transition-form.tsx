@@ -8,9 +8,17 @@ interface Props {
     navigation?: NavigationParams
 }
 interface State {
+    focus: 'name' | 'time' | null
     time: string
     name: string
     signature: string
+}
+
+const getTime = ():string => {
+    const m = new Date().getMinutes()
+    const hours = new Date().getHours()
+    const minutes = m<10? `0${m}`:`${m}`
+    return `${hours}:${minutes}`
 }
 
 export default class TransitionForm extends React.Component <Props, State> {
@@ -32,30 +40,35 @@ export default class TransitionForm extends React.Component <Props, State> {
         super(props)
 
         this.state={
-            time: '12:30',
+            focus: 'time',
+            time: getTime(),
             name: '',
             signature: '',
         }
     }
 
     render(){
+        const {focus, time, name } = this.state
         return  (
             <View style={styles.container}>
                 <Text style={styles.label}>Start time</Text>
                 <TextInput
-                    style={!this.state.time?[styles.input, styles.empty]:styles.input}
+                    style={!!time||focus=='time'?styles.input:styles.empty}
                     keyboardType={'default'}
                     maxLength={180}
+                    autoFocus={true}
+                    onFocus={()=>this.setState({focus:'time'})}
                     value={this.state.time}
                     onChange={e=>this.setState({time:e.nativeEvent.text})}
                 />
                 <Text style={styles.label}>Depot signature name</Text>
                 <TextInput
-                    style={!this.state.time?[styles.input, styles.empty]:styles.input}
+                    style={!!name||focus=='name'?styles.input:styles.empty}
                     keyboardType={'default'}
                     maxLength={180}
-                    value={this.state.time}
-                    onChange={e=>this.setState({time:e.nativeEvent.text})}
+                    onFocus={()=>this.setState({focus:'name'})}
+                    value={this.state.name}
+                    onChange={e=>this.setState({name:e.nativeEvent.text})}
                 />
                 <Text style={styles.label}>Depot in signature</Text>
             </View>
@@ -77,14 +90,14 @@ const styles = StyleSheet.create({
         color: '#777'
     },
     empty: {
-       height: 0
+       height: 0,
+       color: '#000'
     },
     input: {
         fontSize: 24,
         fontWeight: '800',
         color: '#512da7',
-        width: '100%',
-        margin: 10
+        width: '100%'
     },
     send: {
         margin: 20
