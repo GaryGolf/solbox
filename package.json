@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "npm-run-all --parallel build server",
+    "server": "node node_modules/react-native/local-cli/cli.js start",
+    "build": "tsc -w",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "test": "jest"
   },
   "dependencies": {
@@ -21,6 +25,7 @@
     "babel-jest": "20.0.3",
     "babel-preset-react-native": "2.1.0",
     "jest": "20.0.4",
+    "npm-run-all": "^4.0.2",
     "react-test-renderer": "16.0.0-alpha.12",
     "typescript": "^2.4.2"
   },
