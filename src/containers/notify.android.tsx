@@ -17,7 +17,7 @@ interface State {
 export default class Notify extends React.Component <Props, State> {
 
     static navigationOptions = ({navigation}) => ({
-        title: 'Add Comment',
+        title: 'Notify',
         headerRight: (
             <TouchableHighlight onPress={()=>navigation.goBack(null)}> 
                  <View style={styles.send}>

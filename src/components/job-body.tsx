@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, Text, TouchableHighlight } from 'react-native'
 
 import Car from './svg/car'
 import Pointer from './svg/pointer'
@@ -9,6 +9,7 @@ interface Props {
     name:string
     address:string
     link:string
+    navigate(path:string):void
 }
 interface State {}
 
@@ -24,10 +25,12 @@ export default class JobBody extends React.Component <Props, State> {
                     <Pointer/>
                     <Text style={styles.text}>{this.props.address}</Text>
                 </View>
-                 <View style={styles.row}>
-                    <Arrow/>
-                    <Text style={[styles.text,styles.link]}>{this.props.link}</Text>
-                </View>
+                <TouchableHighlight onPress={()=>this.props.navigate('TransitionForm')}>
+                    <View style={styles.row}>
+                        <Arrow/>
+                        <Text style={[styles.text,styles.link]}>{this.props.link}</Text>
+                    </View>
+                </TouchableHighlight>
             </View>
         )
     }

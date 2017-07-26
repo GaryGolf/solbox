@@ -43,6 +43,7 @@ export default class Main extends React.Component<Props, State> {
                         name="ALVARO TRANSPORT PTY LTD"
                         address="90 YARRAWA STREET PRESTONS 2170"
                         link="Depot Accepted"
+                        navigate={navigate}
                     />
                     <JobActions navigate={navigate}/>
                 </View>
@@ -55,6 +56,7 @@ export default class Main extends React.Component<Props, State> {
                         name="ALVARO TRANSPORT PTY LTD"
                         address="90 YARRAWA STREET PRESTONS 2170"
                         link="Depot Start"
+                        navigate={navigate}
                     />
                     <JobActions navigate={navigate}/>
                 </View>
@@ -67,6 +69,7 @@ export default class Main extends React.Component<Props, State> {
                         name="ALVARO TRANSPORT PTY LTD"
                         address="90 YARRAWA STREET PRESTONS 2170"
                         link="Depot Start"
+                        navigate={navigate}
                     />
                     <JobActions navigate={navigate}/>
                 </View>
@@ -79,19 +82,10 @@ export default class Main extends React.Component<Props, State> {
                         name="ALVARO TRANSPORT PTY LTD"
                         address="90 YARRAWA STREET PRESTONS 2170"
                         link="Depot Finished"
+                        navigate={navigate}
                     />
                     <JobActions navigate={navigate}/>
                 </View>
-                {/* <Text>Main Screen</Text>
-                <Button 
-                    onPress={() => navigate('HelloWorld')}
-                    title="Hello"
-                />
-                <Text>SignIn Screen</Text>
-                <Button 
-                    onPress={() => navigate('SignIn')}
-                    title="SignIn"
-                /> */}
             </ScrollView>
         )
     }

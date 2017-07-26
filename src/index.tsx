@@ -5,19 +5,19 @@ import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import Main from './containers/main'
 import Comment from './containers/comment'
 import Notify from './containers/notify'
-import HelloWorld from './containers/hello-world'
+import TransitionForm from './containers/transition-form'
+
 import SignIn from './containers/sign-in'
 
 const Stack = {
     Main: { screen: Main},
     Comment: {screen: Comment},
     Notify: {screen: Notify},
-    HelloWorld: {screen: HelloWorld}
+    TransitionForm: {screen: TransitionForm}
 }
 
 const Drawer = {
-    MainStack: {name: 'MainStack', screen: StackNavigator(Stack, {initialRouteName: 'Main'})},
-    HelloStack: {name: 'HelloStack', screen: StackNavigator(Stack, {initialRouteName: 'HelloWorld'})}
+    MainStack: {name: 'MainStack', screen: StackNavigator(Stack, {initialRouteName: 'Main'})}
 }
 
 const Router = StackNavigator({Drawer:{name:'Drawer',screen:DrawerNavigator(Drawer)},...Stack},{headerMode: 'none'})
