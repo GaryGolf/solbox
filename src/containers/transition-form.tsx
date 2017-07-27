@@ -55,7 +55,7 @@ export default class TransitionForm extends React.Component <Props, State> {
             signature: ''
         }
     }
-
+ 
     render(){
         const {focus, time, name } = this.state
         return  (

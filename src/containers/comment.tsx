@@ -9,6 +9,7 @@ interface Props {
     navigation?: NavigationParams
 }
 interface State {
+    focus: boolean
     text: string
 }
 
@@ -38,20 +39,24 @@ export default class Comment extends React.Component <Props, State> {
         super(props)
 
         this.state={
+            focus: false,
             text: '',
         }
     }
 
     render(){
+        const { text, focus } = this.state
+
         return  (
             <View style={styles.container}>
                 <Text style={styles.label}>Text comment...</Text>
                 <TextInput
-                    style={!this.state.text?[styles.input, styles.empty]:styles.input}
+                    style={!!text||focus?styles.input:styles.empty}
                     keyboardType={'default'}
-                    maxLength={180}
                     value={this.state.text}
                     onChange={e=>this.setState({text:e.nativeEvent.text})}
+                    onFocus={()=>this.setState({focus:true})}
+                    onBlur={()=>this.setState({focus:false})} 
                 />
             </View>
         )
@@ -63,25 +68,24 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         backgroundColor: '#fff',
-        paddingTop: 20,
-        paddingRight: 20
+        paddingHorizontal: 20
     },
     label: {
         fontSize: 18,
         justifyContent: 'flex-start',
         fontWeight: '300',
-        marginLeft: 20,
-        color: '#777'
+        marginTop: 15,
+        color: '#bbb'
     },
     empty: {
-       height: 0
+       height: 0,
+       color: '#000'
     },
     input: {
         fontSize: 24,
         fontWeight: '800',
         color: '#512da7',
         width: '100%',
-        margin: 10
     },
     send: {
         margin: 20
