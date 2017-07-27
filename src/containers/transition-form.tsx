@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, TextInput, TouchableHighlight } from 'react-nati
 import { NavigationParams, NavigationStackScreenOptions } from 'react-navigation'
 
 import Send from '../components/svg/send'
+import Return from '../components/svg/return'
 import Signature from '../components/signature'
 
 interface Props {
@@ -26,6 +27,13 @@ export default class TransitionForm extends React.Component <Props, State> {
     
     static navigationOptions = ({navigation}) => ({
         title: 'Booking Depot In',
+        headerLeft: (
+            <TouchableHighlight onPress={()=>navigation.goBack(null)}> 
+                 <View style={styles.send}>
+                    <Return/>
+                </View> 
+            </TouchableHighlight>
+        ),
         headerRight: (
             <TouchableHighlight onPress={()=>navigation.goBack(null)}> 
                  <View style={styles.send}>
@@ -74,9 +82,7 @@ export default class TransitionForm extends React.Component <Props, State> {
                     />
                     <Text style={styles.label}>Depot in signature</Text>
                 </View>
-                {/* <View style={styles.canvas}> */}
-                    <Signature />
-                {/* </View> */}
+                <Signature />
             </View>
         )
     }
@@ -87,11 +93,6 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         backgroundColor: '#fff'
-    },
-    canvas:{
-        height: '100%',
-        width: '100%',
-        backgroundColor: '#eee'
     },
     form: {
         paddingHorizontal: 20
