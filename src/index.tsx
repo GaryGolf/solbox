@@ -44,7 +44,7 @@ export default class App extends React.Component <Props, State> {
 
     render(){
         const {username, password} = this.state
-        if(!username || !password) return <SignIn onSubmit={this.onSignIn.bind(this)}/>
+        // if(!username || !password) return <SignIn onSubmit={this.onSignIn.bind(this)}/>
         return <Router/>
     }
 }

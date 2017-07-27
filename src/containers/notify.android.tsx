@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, Picker, TouchableHighlight} from 'react-native'
 import { NavigationParams, NavigationStackScreenOptions } from 'react-navigation'
 
 import Send from '../components/svg/send'
+import Return from '../components/svg/return'
 
 interface Props {
     navigation?: NavigationParams
@@ -18,6 +19,13 @@ export default class Notify extends React.Component <Props, State> {
 
     static navigationOptions = ({navigation}) => ({
         title: 'Notify',
+        headerLeft: (
+            <TouchableHighlight onPress={()=>navigation.goBack(null)}> 
+                 <View style={styles.send}>
+                    <Return/>
+                </View> 
+            </TouchableHighlight>
+        ),
         headerRight: (
             <TouchableHighlight onPress={()=>navigation.goBack(null)}> 
                  <View style={styles.send}>
