@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {StyleSheet, Text, View, TextInput, TouchableHighlight} from 'react-native'
+import {StyleSheet, Text, View, TextInput, TouchableHighlight, TextInputStatic} from 'react-native'
 import { NavigationParams, NavigationStackScreenOptions } from 'react-navigation'
 
 import Send from '../components/svg/send'
@@ -15,6 +15,7 @@ interface State {
 
 export default class Comment extends React.Component <Props, State> {
 
+    private input: any
     static navigationOptions = ({navigation}) => ({
         title: 'Add Comment',
         headerLeft: (
@@ -49,9 +50,10 @@ export default class Comment extends React.Component <Props, State> {
 
         return  (
             <View style={styles.container}>
-                <Text style={styles.label}>Text comment...</Text>
+                <Text style={styles.label} onPress={()=>this.input.focus()}>Text comment...</Text>
                 <TextInput
                     style={!!text||focus?styles.input:styles.empty}
+                    ref={input=>this.input=input}
                     keyboardType={'default'}
                     value={this.state.text}
                     onChange={e=>this.setState({text:e.nativeEvent.text})}
