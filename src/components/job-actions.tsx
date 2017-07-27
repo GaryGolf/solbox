@@ -36,7 +36,7 @@ export default class JobActions extends React.Component <Props, State> {
                         </View>
                     </TouchableHighlight>
                     <TouchableHighlight
-                        onPress={()=>console.log('press')}>
+                        onPress={()=>navigate('Photo')}>
                         <View style={styles.button}>
                             <Photo/>
                         </View>

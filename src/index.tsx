@@ -6,6 +6,7 @@ import Main from './containers/main'
 import Comment from './containers/comment'
 import Notify from './containers/notify'
 import TransitionForm from './containers/transition-form'
+import Photo from './containers/photo'
 
 import SignIn from './containers/sign-in'
 
@@ -13,7 +14,8 @@ const Stack = {
     Main: { screen: Main},
     Comment: {screen: Comment},
     Notify: {screen: Notify},
-    TransitionForm: {screen: TransitionForm}
+    TransitionForm: {screen: TransitionForm},
+    Photo: {screen: Photo}
 }
 
 const Drawer = {
