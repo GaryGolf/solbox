@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         justifyContent: 'flex-start',
         fontWeight: '300',
-        color: '#777',
+        color: '#bbb',
         marginTop: 15
     },
     empty: {
