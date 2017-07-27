@@ -1,21 +1,20 @@
 import * as React from 'react'
-import {StyleSheet, Text, View, TextInput, TouchableHighlight, TextInputStatic} from 'react-native'
+import {StyleSheet, View, TouchableHighlight} from 'react-native'
 import { NavigationParams, NavigationStackScreenOptions } from 'react-navigation'
 
 import Send from '../components/svg/send'
 import Return from '../components/svg/return'
+import HiddenInput from '../components/hidden-input'
 
 interface Props {
     navigation?: NavigationParams
 }
 interface State {
-    focus: boolean
     text: string
 }
 
 export default class Comment extends React.Component <Props, State> {
 
-    private input: any
     static navigationOptions = ({navigation}) => ({
         title: 'Add Comment',
         headerLeft: (
@@ -38,27 +37,20 @@ export default class Comment extends React.Component <Props, State> {
 
     constructor(props:Props){
         super(props)
-
         this.state={
-            focus: false,
             text: '',
         }
+        
     }
 
     render(){
-        const { text, focus } = this.state
-
+        const { text } = this.state
         return  (
             <View style={styles.container}>
-                <Text style={styles.label} onPress={()=>this.input.focus()}>Text comment...</Text>
-                <TextInput
-                    style={!!text||focus?styles.input:styles.empty}
-                    ref={input=>this.input=input}
-                    keyboardType={'default'}
-                    value={this.state.text}
-                    onChange={e=>this.setState({text:e.nativeEvent.text})}
-                    onFocus={()=>this.setState({focus:true})}
-                    onBlur={()=>this.setState({focus:false})} 
+                <HiddenInput
+                    title="Text comment.."
+                    autoFocus={true}
+                    onChangeText={text=>this.setState({text})}
                 />
             </View>
         )
@@ -72,25 +64,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         paddingHorizontal: 20
     },
-    label: {
-        fontSize: 18,
-        justifyContent: 'flex-start',
-        fontWeight: '300',
-        marginTop: 15,
-        color: '#bbb'
-    },
-    empty: {
-       height: 0,
-       color: '#000'
-    },
-    input: {
-        fontSize: 24,
-        fontWeight: '800',
-        color: '#512da7',
-        width: '100%',
-    },
     send: {
         margin: 20
     }
-
 })
