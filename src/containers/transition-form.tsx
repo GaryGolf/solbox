@@ -2,7 +2,7 @@ import * as React from 'react'
 import {StyleSheet, Text, View, TextInput, TouchableHighlight } from 'react-native'
 import { NavigationParams, NavigationStackScreenOptions } from 'react-navigation'
 
-import Send from '../components/svg/send'
+import Check from '../components/svg/check'
 import Return from '../components/svg/return'
 import Signature from '../components/signature'
 
@@ -37,7 +37,7 @@ export default class TransitionForm extends React.Component <Props, State> {
         headerRight: (
             <TouchableHighlight onPress={()=>navigation.goBack(null)}> 
                  <View style={styles.send}>
-                    <Send/>
+                    <Check/>
                 </View> 
             </TouchableHighlight>
         ),

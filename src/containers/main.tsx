@@ -6,6 +6,7 @@ import JobHeader from '../components/job-header'
 import JobBody from '../components/job-body'
 import JobActions from '../components/job-actions'
 import Menu from '../components/svg/menu'
+import Options from '../components/svg/options'
 
 interface Props {
     navigation?: NavigationParams
@@ -20,6 +21,13 @@ export default class Main extends React.Component<Props, State> {
             <TouchableHighlight onPress={()=>navigation.navigate('DrawerOpen')}> 
                  <View style={styles.menu}>
                     <Menu/>
+                </View> 
+            </TouchableHighlight>
+        ),
+        headerRight: (
+            <TouchableHighlight onPress={()=>navigation.navigate('DrawerOpen')}> 
+                 <View style={styles.menu}>
+                    <Options/>
                 </View> 
             </TouchableHighlight>
         ),

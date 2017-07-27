@@ -4,7 +4,7 @@ import Svg, {Path} from 'react-native-svg'
 interface Props {
     color:string
 }
-export default class Calendar extends React.Component<Props, null>{
+export default class Clock extends React.Component<Props, null>{
     render(){
         return (
              <Svg width="16" height="16" viewBox="0 0 16 16">
