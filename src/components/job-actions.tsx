@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {StyleSheet, View, TouchableHighlight} from 'react-native'
+import {Alert, StyleSheet, View, TouchableHighlight} from 'react-native'
 
 import Close from './svg/close'
 import Comment from './svg/comment'
@@ -14,11 +14,17 @@ interface State {}
 export default class JobActions extends React.Component <Props, State> {
     render() {
         const {navigate} = this.props
+        const showAlert = () => {
+            Alert.alert('Warning!','Do you want reject this job?',[
+                {text: 'YES', onPress: () => console.log('OK Pressed')},
+                {text: 'NO', onPress: () => console.log('Cancel Pressed'), style: 'cancel'}
+            ])
+        }
         return (
             <View style={styles.container}>
                 <View style={styles.row}>
                     <TouchableHighlight
-                        onPress={()=>console.log('press')}>
+                        onPress={()=>showAlert()}>
                         <View style={styles.button}>
                             <Close/>
                         </View>

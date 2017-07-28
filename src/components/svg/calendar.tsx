@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Svg, {Path, G, Text} from 'react-native-svg'
+import Svg, {Path} from 'react-native-svg'
 
 export default class Calendar extends React.Component<null, null>{
     render(){
