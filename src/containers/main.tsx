@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet, View, TouchableHighlight, ScrollView} from 'react-native'
+import { StyleSheet, View, TouchableHighlight, ScrollView, NativeModules, Text, DeviceEventEmitter} from 'react-native'
 import { NavigationParams, NavigationStackScreenOptions } from 'react-navigation'
 
 import JobHeader from '../components/job-header'
@@ -8,10 +8,15 @@ import JobActions from '../components/job-actions'
 import Menu from '../components/svg/menu'
 import Options from '../components/svg/options'
 
+const DatabaseSync = NativeModules.DatabaseSync
+
 interface Props {
     navigation?: NavigationParams
 }
-interface State {}
+interface State {
+    text: string
+    docs: Array<any>
+}
 
 
 export default class Main extends React.Component<Props, State> {
@@ -34,11 +39,32 @@ export default class Main extends React.Component<Props, State> {
         headerStyle: {backgroundColor: '#512da7'} ,
         headerTitleStyle: { color: '#fff'}
     }) 
+
+    constructor(props:Props){
+        super(props)
+
+        this.state = {
+            text: 'text',
+            docs: []
+        }
+        DeviceEventEmitter.addListener('qts.docs', e => {
+            // console.log(e)
+            this.setState({docs: e['docs']})
+        })
+        DatabaseSync.createLiveQuery()
+        DatabaseSync.createDocument('people', {
+            name: 'Ann',
+            age: 36
+        })
+    }
     openDrawer(){
         this.props.navigation.navigate('DrawerOpen')
     }
     render(){
         const {navigate} = this.props.navigation
+
+        console.log(this.state.docs)
+
         return (
             <ScrollView>
                 <View style={styles.container}>
